@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMl 5 Input Types</title>
+</head>
+<body>
+    <header>
+        <h1>HTMl 5 Input Types</h1>
+    </header>
+    <section>
+        <form action="text">
+            <div class="formGroup" >
+                <label >color</label>
+                <input type="color">
+            </div>
+            <div class="formGroup" >
+                <label >Date</label>
+                <input type="date">
+            </div>
+            <div class="formGroup" >
+                <label >Date Time</label>
+                <input type="datetime-local">
+            </div>
+
+            <div class="formGroup" >
+                <label >E-mail</label>
+                <input type="email">
+            </div>
+
+            <div class="formGroup" >
+                <label >Month</label>
+                <input type="month">
+            </div>
+
+            <div class="formGroup" >
+                <label >Number</label>
+                <input type="number" min="0" max="100" step="10">
+            </div>
+            <div class="formGroup" >
+                <input type="text" id="inputType">
+                <label >Range</label>
+                <input type="range" min="0" max="100" step="10" onchange="updateText(this.value);">
+                <script>
+                    function updateText (num)
+                    {
+                        document.getElementById("inputType") . value=num;
+                    }
+                </script>
+
+            </div>
+
+            <div class="formGroup" >
+                <label >Search</label>
+                <input type="search" >
+            </div>
+            <div class="formGroup" >
+                <label >Time</label>
+                <input type="time" >
+            </div>
+            <div class="formGroup" >
+                <label >URL</label>
+                <input type="url" >
+            </div>
+
+            <div class="formGroup" >
+                <label >Week</label>
+                <input type="week" >
+            </div>
+
+            <div class="formGroup" >
+                <label >List</label>
+                <input list="codes" name="code">
+                <datalist id="codes">
+                    <option value="PHP"></option>
+                    <option value="Java"></option>
+                    <option value="CSS"></option>
+                    <option value="JavaScript"></option>
+                    <option value="HTML"></option>
+                </datalist>
+            </div>
+            </form>
+            <button>Submit</button>
+
+            <section>
+                <h1>Output</h1>
+                <form oninput="x.value=parseInt(a.value) + parseInt(b.value), y.value=parseInt(a.value)">
+                    0
+                    <input type="range" id="a" name="a" value="50" min="0" max="100">
+                    100
+                    +
+                    <input type="text" name="b" value="0">
+                    =
+                    <output name="x"></output>
+                    <output name="y"></output>
+                </form>
+            </section>
+            <section>
+                <h1>AutoComplete</h1>
+                <form autocomplete="off" >
+                    <div class="formGroup" >
+                        <input type="text" name="fName" placeholder="First Name"> 
+                    </div>
+                    <div class="formGroup" >
+                        <input type="text" name="lName" placeholder="Last Name"> 
+                    </div>
+                    <div class="formGroup" >
+                        <input type="email" name="email" placeholder="E-mail"> 
+                    </div>
+                        <button>Submit</button> 
+                </form>
+            </section>
+            <section>
+                <h1>The novalidate atribute and autofocus:</h1>
+                <form  >
+                    <div class="formGroup" >
+                        <input type="text" name="fName" placeholder="First Name" required> 
+                    </div>
+                    <div class="formGroup" >
+                        <input type="text" name="lName" placeholder="Last Name"required> 
+                    </div>
+                    <div class="formGroup" >
+                        <input type="email" name="email" placeholder="E-mail"required> 
+                    </div>
+                        <button>Submit</button> 
+                </form>
+            </section>
+            <section>
+                <h1>The form attribute:</h1>
+                <form id="form1" >
+                    <div class="formGroup" >
+                        <input type="text" name="fName" placeholder="First Name" required> 
+                    </div>
+                    <div class="formGroup" >
+                        <input type="text" name="lName" placeholder="Last Name"required> 
+                    </div>
+                    <div class="formGroup" >
+                        <input type="email" name="email" placeholder="E-mail"required> 
+                    </div>
+                        <button>Submit</button> 
+                        <button formnovalidate>Subimt Novalidate</button>
+                </form>
+                <input type="text" name="color" form="form1">
+            </section>
+    </section>
+</body>
+</html>
